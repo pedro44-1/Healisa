@@ -8,8 +8,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 ENV DATABASE_URL=sqlite:///healisa.db
-ENV JWT_SECRET=demo-secret-key-not-for-production
-ENV MINIMAX_API_KEY=
+ENV JWT_SECRET=change-this-in-production
+ENV OPENROUTER_API_KEY=
 
 EXPOSE 8000
 

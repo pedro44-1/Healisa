@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./backend
+    container_name: healisa-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - DATABASE_URL=sqlite:///healisa.db
+      - JWT_SECRET=demo-secret-key-not-for-production
+      - MINIMAX_API_KEY=
+
+  frontend:
+    build:
+      ./frontend
+      args:
+        VITE_API_URL=http://localhost:8000
+    container_name: healisa-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend

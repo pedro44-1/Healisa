@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Colors ────────────────────────────────────────────── */
+  --color-bg: #f0f4ff;
+  --color-surface: #ffffff;
+  --color-surface-2: #f8faff;
+  --color-border: #e2e8f0;
+
+  --color-primary: #4f6ef7;       /* indigo-blue */
+  --color-primary-light: #eef1fe;
+  --color-primary-dark: #3a57e0;
+
+  --color-accent: #f76f9a;        /* soft coral-pink */
+  --color-accent-light: #fef1f5;
+
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-danger: #f87171;
+
+  --color-text: #1a1f36;
+  --color-text-2: #4a5568;
+  --color-text-3: #8896b3;
+
+  /* ── Gradients ─────────────────────────────────────────── */
+  --color-gradient-start: #e8eeff;
+  --color-gradient-end: #f0f4ff;
+
+  /* ── Shadows ────────────────────────────────────────────── */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.07), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.04);
+  --shadow-card: 0 2px 16px 0 rgb(79 110 247 / 0.06), 0 1px 4px 0 rgb(0 0 0 / 0.04);
+  --shadow-glow: 0 0 24px 4px rgb(79 110 247 / 0.15);
+  --shadow-accent-glow: 0 0 24px 4px rgb(247 111 154 / 0.15);
+
+  /* ── Radii ─────────────────────────────────────────────── */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-2xl: 40px;
+  --radius-full: 9999px;
+
+  /* ── Spacing ────────────────────────────────────────────── */
+  --nav-h: 72px;
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+}
+
+/* Mobile-first: prevent zoom on input */
+input, select, textarea {
+  font-size: 16px;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 9999px; }
+
+/* ── Selection ─────────────────────────────────────────────── */
+
+::selection { background: #c7d2fe; color: var(--color-primary-dark); }
+
+/* ── Focus ────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

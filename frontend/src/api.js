@@ -54,7 +54,7 @@ export const askNoah = async (messages) => {
   const res = await axios.post(
     'https://openrouter.ai/api/v1/chat/completions',
     {
-      model: 'openai/gpt-4o-mini',
+      model: 'gpt-4o-mini',
       messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...conversation],
       max_tokens: 300,
     },

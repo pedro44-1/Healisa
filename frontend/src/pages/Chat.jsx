@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { sendChat } from '../api'
+import { askNoah } from '../api'
 
 const WELCOME = {
   role: 'assistant',
@@ -90,8 +90,8 @@ export default function Chat() {
 
     try {
       const history = [...messages, userMsg].map((m) => ({ role: m.role, content: m.content }))
-      const res = await sendChat(history)
-      setMessages((prev) => [...prev, { role: 'assistant', content: res.data.reply }])
+      const reply = await askNoah(history)
+      setMessages((prev) => [...prev, { role: 'assistant', content: reply }])
     } catch {
       setMessages((prev) => [
         ...prev,
